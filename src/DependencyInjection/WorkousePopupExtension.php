@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Workouse\PopupPlugin\DependencyInjection;
 
+use Exception;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -12,6 +13,9 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 final class WorkousePopupExtension extends Extension
 {
+    /**
+     * @throws Exception
+     */
     public function load(array $config, ContainerBuilder $container): void
     {
         $config = $this->processConfiguration($this->getConfiguration([], $container), $config);

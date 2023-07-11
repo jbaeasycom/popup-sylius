@@ -30,51 +30,44 @@ class Popup implements PopupInterface
     }
 
     /**
-     * @var int
      * @ORM\Id()
      * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\Column(type="integer")
      */
-    protected $id;
+    protected ?int $id = null;
 
     /**
-     * @var string|null
      * @ORM\Column(type="string")
      * @Assert\NotBlank(message="workouse_popup_plugin.code.not_blank")
      */
-    protected $code;
+    protected ?string $code = null;
 
     /**
-     * @var string|null
      * @ORM\Column(type="text", nullable=true)
      */
-    protected $customCss;
+    protected ?string $customCss = null;
 
     /**
-     * @var string|null
      * @ORM\Column(type="string", nullable=true)
      */
-    protected $cssClass;
+    protected ?string $cssClass = null;
 
     /**
-     * @var bool
      * @ORM\Column(type="boolean")
      */
-    protected $enabled = false;
+    protected bool $enabled = false;
 
     /**
-     * @var bool
      * @ORM\Column(type="boolean")
      */
-    protected $closeEnabled = true;
+    protected bool $closeEnabled = true;
 
     /**
-     * @var array
      * @ORM\Column(type="json", nullable=true)
      */
-    protected $rules = [];
+    protected array $rules = [];
 
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -145,7 +138,7 @@ class Popup implements PopupInterface
         return $translation;
     }
 
-    protected function createTranslation(): ?PopupTranslationInterface
+    protected function createTranslation(): TranslationInterface
     {
         return new PopupTranslation();
     }

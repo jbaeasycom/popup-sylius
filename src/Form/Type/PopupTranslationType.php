@@ -11,25 +11,44 @@ use Symfony\Component\Form\FormBuilderInterface;
 
 class PopupTranslationType extends AbstractResourceType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options): void
-    {
+    public function buildForm(
+        FormBuilderInterface $builder,
+        array $options
+    ): void {
         $builder
-            ->add('title', TextType::class, [
-                'label' => 'workouse_popup_plugin.ui.title',
-                'required' => false,
-            ])
-            ->add('content', CKEditorType::class, [
-                'label' => 'workouse_popup_plugin.ui.content',
-                'required' => false,
-            ])
-            ->add('buttonText', TextType::class, [
-                'label' => 'workouse_popup_plugin.ui.button_text',
-                'required' => false,
-            ])
-            ->add('buttonLink', TextType::class, [
-                'label' => 'workouse_popup_plugin.ui.button_link',
-                'required' => false,
-            ]);
+            ->add(
+                'title',
+                TextType::class,
+                [
+                    'label' => 'workouse_popup_plugin.ui.title',
+                    'required' => false,
+                ]
+            )
+            ->add(
+                'content',
+                CKEditorType::class,
+                [
+                    'label' => 'workouse_popup_plugin.ui.content',
+                    'required' => false,
+                ]
+            )
+            ->add(
+                'buttonText',
+                TextType::class,
+                [
+                    'label' => 'workouse_popup_plugin.ui.button_text',
+                    'required' => false,
+                ]
+            )
+            ->add(
+                'buttonLink',
+                TextType::class,
+                [
+                    'label' => 'workouse_popup_plugin.ui.button_link',
+                    'required' => false,
+                ]
+            )
+        ;
     }
 
     public function getBlockPrefix(): string

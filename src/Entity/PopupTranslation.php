@@ -14,38 +14,33 @@ use Sylius\Component\Resource\Model\AbstractTranslation;
 class PopupTranslation extends AbstractTranslation implements PopupTranslationInterface
 {
     /**
-     * @var int
      * @ORM\Id()
      * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\Column(type="integer")
      */
-    protected $id;
+    protected ?int $id = null;
 
     /**
-     * @var string|null
      * @ORM\Column(type="string", nullable=true)
      */
-    protected $title;
+    protected ?string $title = null;
 
     /**
-     * @var string|null
      * @ORM\Column(type="text", nullable=true)
      */
-    protected $content;
+    protected ?string $content = null;
 
     /**
-     * @var string|null
      * @ORM\Column(type="string", nullable=true)
      */
-    protected $buttonText;
+    protected ?string $buttonText = null;
 
     /**
-     * @var string|null
      * @ORM\Column(type="string", nullable=true)
      */
-    protected $buttonLink;
+    protected ?string $buttonLink = null;
 
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }

@@ -14,11 +14,13 @@ class AdminMenuListener
 
         $newSubmenu = $menu
             ->addChild('index')
-            ->setLabel('workouse_popup_plugin.ui.popups');
+            ->setLabel('workouse_popup_plugin.ui.popups')
+        ;
 
         $newSubmenu
             ->addChild('index', ['route' => 'workouse_popup_plugin_admin_popup_index'])
             ->setLabel('workouse_popup_plugin.ui.popups')
-            ->setLabelAttribute('icon', 'star');
+            ->setLabelAttribute('icon', 'star')
+        ;
     }
 }
