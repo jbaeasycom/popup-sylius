@@ -6,7 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
-        "sylius/sylius": "v1.12.8",
+        "sylius/sylius": "v1.13",
         "friendsofsymfony/ckeditor-bundle": "^2.0"
     },
     "require-dev": {
